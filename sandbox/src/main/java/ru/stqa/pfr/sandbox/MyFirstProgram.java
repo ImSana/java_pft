@@ -1,4 +1,5 @@
 package ru.stqa.pfr.sandbox;
+
 public class MyFirstProgram {
 
     public static void main(String[] args) {
@@ -12,9 +13,12 @@ public class MyFirstProgram {
         Rectangle r = new Rectangle(4, 7);
 
         System.out.println("Площадь Прямоугольника со стороной " + r.a + " и " + r.b + "=" + r.area());
+
+
     }
 
     public static void hello(String somebody) {
         System.out.println("Hello, " + somebody + "!");
     }
+
 }
