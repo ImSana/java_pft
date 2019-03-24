@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook;
+package ru.stqa.pft.addressbook.model;
 
 public class GroupData {
   private final String name;
@@ -10,16 +10,13 @@ public class GroupData {
     this.header = header;
     this.footer = footer;
   }
-
   public String getName() {
     return name;
   }
-
   public String getHeader() {
     return header;
   }
-
-  public String getFooter() {
+public String getFooter() {
     return footer;
   }
 }
