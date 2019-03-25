@@ -9,6 +9,8 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.Assert.assertTrue;
+
 public class ApplicationManager {
   public WebDriver wd;
 
@@ -118,8 +120,10 @@ public class ApplicationManager {
     wd.findElement(By.name("email")).click();
     wd.findElement(By.name("email")).clear();
     wd.findElement(By.name("email")).sendKeys("okbogush@ya.com");
+    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
 
   public void fillContactForm() {
   }
+
 }
