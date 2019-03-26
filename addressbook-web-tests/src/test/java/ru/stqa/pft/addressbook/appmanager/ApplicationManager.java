@@ -7,9 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
-import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertTrue;
+import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
   public WebDriver wd;
@@ -91,7 +90,6 @@ public class ApplicationManager {
     wd.findElement(By.name("selected[]")).click();
   }
 
-
   public void gotoContactCreation() {
     wd.findElement(By.linkText("add new")).click();
   }
@@ -124,6 +122,16 @@ public class ApplicationManager {
   }
 
   public void fillContactForm() {
+  }
+
+  public void pushYesWindow() {
+    wd.switchTo().alert().accept();
+  }
+  public void selectContact() {
+    wd.findElement(By.id("31")).click();
+  }
+  public void contactDelition() {
+    wd.findElement(By.xpath("//input[@value='Delete']")).click();
   }
 
 }
