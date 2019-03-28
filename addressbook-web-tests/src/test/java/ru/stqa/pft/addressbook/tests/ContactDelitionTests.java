@@ -6,9 +6,9 @@ public class ContactDelitionTests extends TestBase{
 
   @Test
   public void testContactDelition() throws Exception {
-    app.selectContact();
-    app.contactDelition();
-    app.pushYesWindow();
+    app.getContactHelper().selectContact();
+    app.getContactHelper().contactDelition();
+    app.getContactHelper().pushYesWindow();
   }
 
 }
