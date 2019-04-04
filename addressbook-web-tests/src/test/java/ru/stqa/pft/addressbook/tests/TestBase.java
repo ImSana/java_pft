@@ -1,16 +1,14 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-  public final ApplicationManager app = new ApplicationManager();
+  public final ApplicationManager app = new ApplicationManager(BrowserType.FIREFOX);
   public WebDriver wd;
 
   @BeforeMethod(alwaysRun = true)
@@ -21,6 +19,4 @@ public class TestBase {
   public void tearDown() throws Exception {
     app.stop();
   }
-
-
 }
