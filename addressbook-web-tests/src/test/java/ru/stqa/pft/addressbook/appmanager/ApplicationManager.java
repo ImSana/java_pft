@@ -6,7 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+
 public class ApplicationManager {
   WebDriver wd;
 
@@ -14,6 +17,12 @@ public class ApplicationManager {
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
   private ContactHelper contactHelper;
+  private String browser;
+
+  public ApplicationManager(String browser) {
+
+    this.browser = browser;
+  }
 
   public static boolean isAlertPresent(WebDriver wd) {
     try {
@@ -25,12 +34,11 @@ public class ApplicationManager {
   }
 
   public void init() {
-    String browser = BrowserType.CHROME;
-    if (browser == BrowserType.FIREFOX) {
+    if (Objects.equals(browser, BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
-    } else if (browser == BrowserType.CHROME) {
+    } else if (Objects.equals(browser, BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if (browser == BrowserType.IE) {
+    } else if (Objects.equals(browser, BrowserType.IE)) {
       wd = new InternetExplorerDriver();
     }
       wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
